@@ -1,6 +1,6 @@
 import faker from "faker";
 
-import Stack from "../stack";
+import Stack from "../stack/Stack";
 
 describe("Using a stack", () => {
   let stack;
