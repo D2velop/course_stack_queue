@@ -15,6 +15,8 @@ Those directories must export a class when we import them. A Stack class for sta
 
 The classes contracts are based on what you have learned from the courses you received for this training week.
 
+When you have implemented a working solution base on array or list, try to implements the same with the other data structure.
+
 /!\ Some tests may be added after you create your own branch, so rebase your branch when your are not fastforwarding the main branch. And when you have complete the challenge check if your branch is up to date with the base branch. You must pass all the tests to succeed.
 
 ## Contribution
