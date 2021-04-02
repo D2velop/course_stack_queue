@@ -46,6 +46,10 @@ describe("Using a stack", () => {
       expect(stack.isEmpty()).toEqual(false);
       expect(stack.isFull()).toEqual(true);
     });
+
+    it("can not add a new element", () => {
+      expect(stack.push(value)).toEqual(false);
+    });
   });
 
   describe("when a stack has a size higher than 1", () => {

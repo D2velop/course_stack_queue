@@ -44,6 +44,10 @@ describe("Using a queue", () => {
       expect(queue.isEmpty()).toEqual(false);
       expect(queue.isFull()).toEqual(true);
     });
+
+    it("can not add a new element", () => {
+      expect(queue.enqueue(value)).toEqual(false);
+    });
   });
 
   describe("when a queue has a size higher than 1", () => {
