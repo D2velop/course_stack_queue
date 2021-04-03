@@ -5,52 +5,22 @@ export default class {
     }
 
     enqueue(value) {
-        let elementAddWithSucess = false
-
-        this.queue.push(value)
-        if (this.returnTheLastElement !== null) {
-            elementAddWithSucess = true
-        }
-        return elementAddWithSucess
+        return this.isFull() === false ? this.queue.push(value) !== null : false
     }
 
     dequeue() {
-        let element = this.queue[0]
-        this.queue.shift()
-        if (element === undefined) {
-            element = null
-        }
-        return element
+        return this.queue[0] ? this.queue.shift() : null
     }
 
     peek() {
-        let element = this.queue[0]
-
-        if (element === undefined) {
-            element = null
-        }
-        return element
+        return this.queue[0] ? this.queue[0] : null
     }
 
     isFull() {
-        let queueIsFull = false
-
-        if (this.queue.length == this.queueSize) {
-            queueIsFull = true
-        }
-        return queueIsFull
+        return this.queue.length === this.queueSize
     }
 
     isEmpty() {
-        let queueIsEmpty = false
-
-        if (this.queue.length == 0) {
-            queueIsEmpty = true
-        }
-        return queueIsEmpty
-    }
-
-    returnTheLastElement() {
-        return this.queue[this.queue.length - 1]
+        return this.queue.length === 0
     }
 }

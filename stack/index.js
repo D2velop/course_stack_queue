@@ -5,52 +5,22 @@ export default class {
     }
 
     push(value) {
-        let elementAddWithSucess = false
-
-        this.stack.push(value)
-        if (this.returnTheLastElement !== null) {
-            elementAddWithSucess = true
-        }
-        return elementAddWithSucess
+        return this.isFull() === false ? this.stack.push(value) !== null : false
     }
 
     pop() {
-        let element = this.returnTheLastElement()
-        this.stack.pop()
-        if (element === undefined) {
-            element = null
-        }
-        return element
+        return this.stack[this.stack.length - 1] ? this.stack.pop() : null
     }
 
     peek() {
-        let element = this.stack[0]
-
-        if (element === undefined) {
-            element = null
-        }
-        return element
+        return this.stack[0] ? this.stack[0] : null
     }
 
     isFull() {
-        let stackIsFull = false
-
-        if (this.stack.length == this.stackSize) {
-            stackIsFull = true
-        }
-        return stackIsFull
+        return this.stack.length === this.stackSize
     }
 
     isEmpty() {
-        let stackIsEmpty = false
-
-        if (this.stack.length == 0) {
-            stackIsEmpty = true
-        }
-        return stackIsEmpty
-    }
-
-    returnTheLastElement() {
-        return this.stack[this.stack.length - 1]
+        return this.stack.length === 0
     }
 }
