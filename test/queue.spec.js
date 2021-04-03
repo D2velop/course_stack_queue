@@ -1,6 +1,6 @@
 import faker from "faker";
 
-import Queue from "../queue/queue";
+import Queue from '../queue';
 
 describe("Using a queue", () => {
   let queue;

@@ -1,4 +1,4 @@
-import Stack from "../stack/Stack";
+import Stack from "../stack";
 
 describe("Stack", () => {
   const stackSize = 10;

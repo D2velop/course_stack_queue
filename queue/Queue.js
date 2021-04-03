@@ -1,39 +1,41 @@
-class Queue{
+import { LinkedList } from "../linkedList";
+
+export default class Queue{
     constructor(queueSize){
-        this.items = [];
+        this.linkedList = new LinkedList();
         this.maxSize = queueSize;
     }
+
     enqueue(element)
     {    
         if(this.isFull()){
             return false;
         }
-        else{
-            this.items.push(element);
-            return true;
-        }
+        this.linkedList.addTail(element);
+        return true;
     }
+
     
     dequeue()
     {
         if(this.isEmpty())
             return null;
-        return this.items.shift();
+        return this.linkedList.removeHead().value;
     }
 
     peek(){
     
         if(this.isEmpty())
             return null;
-        return this.items[0];
+        return this.linkedList.head.value;
     }
+
     isEmpty()
     {
-        return this.items.length == 0;
+        return this.linkedList.length === 0;
     }   
 
     isFull(){
-        return this.items.length >= this.maxSize;
+        return this.linkedList.length === this.maxSize;
     }
 }
-export default Queue;

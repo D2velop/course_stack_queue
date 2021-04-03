@@ -1,42 +1,47 @@
+import { LinkedList } from "../linkedList";
+
 class Stack {
     constructor(stackSize)
     {
-        this.items = [];
+        this.linkedList = new LinkedList();
         this.maxSize = stackSize;
     }
   
     isEmpty()
     {
-        return this.items.length == 0;
+        return this.linkedList.length == 0;
     }
+
     push(value)
     {
         if(this.isFull()){
             return false
         }
-        this.items.push(value);
+        this.linkedList.addTail(value);
         return true;
     }
+
     pop()
     {
-        if (this.items.length == 0)
+        if (this.isEmpty())
             return null;
-        return this.items.pop();
+        return this.linkedList.removeTail().value;
     }
+
     peek()
     {
         if(this.isEmpty()){
             return null;
         }
-        return this.items[this.items.length - 1];
+        return this.linkedList.tail.value;
     }
     
     isEmpty(){
-        return this.items.length == 0;
+        return this.linkedList.length === 0;
     }
 
     isFull(){
-        return this.items.length >= this.maxSize;
+        return this.linkedList.length === this.maxSize;
     }
 }
 export default Stack;

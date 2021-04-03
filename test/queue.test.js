@@ -1,4 +1,4 @@
-import Queue from "../queue/queue";
+import Queue from '../queue';
 
 describe("Queue", () => {
   const queueSize = 10;
@@ -11,7 +11,6 @@ describe("Queue", () => {
     });
 
     it("should add an element into the queue", () => {
-      
       expect(queue.enqueue(10)).toBe(true);
     });
 
